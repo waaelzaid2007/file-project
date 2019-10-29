@@ -1,0 +1,74 @@
+while True:
+	import random
+	import time
+	try:
+
+		while True:
+
+			print('''you start with $20 if u lose the
+money u lose the game.
+To win the game u must get $200.
+You only get 3 try each bet.
+but if you get 5 in a row you will automatically win.
+
+			''')
+			p = 0
+			m = 20
+			a = 1
+			b = 10
+			while True:
+				if m > 199:
+					print("""WHAT U WON HOW!!!!
+					
+					
+					
+					
+					""")
+					time.sleep(5)
+					break
+				if m < 1:
+					print('''oh, no u lose stupid :)
+				
+				
+					''')
+					time.sleep(5)
+
+					break
+				v = random.randint(a, b)
+				h = 0
+				h = h + int(input('how much do u want to bet: '))
+				while (h > m) or (h < 0):
+					print("NO, don't cheat.")
+					h = h - h
+					h = h + int(input('how much do u want to bet: '))
+				for i in range(3):
+					r = int(input('guess a # between 0 and 10:'))
+					if r == v:
+						print('you get', h, 'dollors')
+						m = m + h
+						print('now you have $', m)
+						p += 1
+						print('your strek is ', p, ' now')
+						break
+
+					if r > v:
+						print('try lower')
+
+					if r < v:
+						print('try higher')
+
+				if r != v:
+					print('HAHA U LOSE.' + '$', h)
+					m = m - h
+					print('now you have $', m)
+					print('the # was', v)
+					p = 0
+					print('now your strek is ', p)
+				if p > 4:
+					m = 200
+					print('you win')
+	except:
+		print('''sorry IDIOT, we had a error because of the dumb shit u are
+
+''')
+		time.sleep(3)
